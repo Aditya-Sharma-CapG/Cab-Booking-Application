@@ -1,0 +1,51 @@
+package com.capgemini.cab.management.application.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.capgemini.cab.management.application.domain.Cab;
+import com.capgemini.cab.management.application.service.CabService;
+
+@RestController
+@RequestMapping("/api/cabs")
+public class CabController {
+
+	private CabService cabService;
+
+	public CabController(CabService cabService) {
+		super();
+		this.cabService = cabService;
+	}
+	
+	// build create cab REST API
+	@PostMapping()
+	public ResponseEntity<Cab> saveCab(@RequestBody Cab cab) {
+		
+		return new ResponseEntity<Cab>(cabService.saveCab(cab), HttpStatus.CREATED);
+	}
+	
+	
+	
+	
+//	----------------------------------------------
+	
+	// handle method to handle list of cabs and return mode and view
+//	if()
+	@GetMapping("/cabs")
+	public String listCabs(Model model) {
+		model.addAttribute("cars", cabService.getAllCabs());
+		return "cabs";
+	}
+	
+//	@GetMapping("/admin")
+//	public String listAdmin(Model model) {
+//		model.addAttribute("cars", cabService.getAllCabs());
+//		return "cabs";
+//	}
+}

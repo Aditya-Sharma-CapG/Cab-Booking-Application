@@ -1,0 +1,19 @@
+package com.capgemini.cab.management.application.exception;
+
+public class CabNotFoundException extends RuntimeException {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private String cabtype;
+	private float cabPerKmRate;
+	
+	public CabNotFoundException(String cabtype, float cabPerKmRate) {
+		super(String.format("%s not found with %f", cabtype, cabPerKmRate));
+		this.cabtype = cabtype;
+		this.cabPerKmRate = cabPerKmRate;
+	}
+	
+}

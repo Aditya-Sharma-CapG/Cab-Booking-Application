@@ -1,0 +1,15 @@
+package com.capgemini.cab.management.application.service;
+
+import java.util.List;
+
+import com.capgemini.cab.management.application.domain.Cab;
+
+public interface CabService {
+
+	Cab saveCab(Cab cab);
+	
+	List<Cab> getAllCabs();
+	
+	Cab getCabById(long id);
+	
+}

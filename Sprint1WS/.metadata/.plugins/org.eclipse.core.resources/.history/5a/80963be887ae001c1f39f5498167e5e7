@@ -1,0 +1,8 @@
+package com.capgemini.cab.management.application.serviceImpl;
+
+public class Snippet {
+	
+	@Autowired
+	private MapValidationErrorService mapValidationErrorService;
+}
+

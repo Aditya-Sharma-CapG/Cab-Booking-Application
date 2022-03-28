@@ -1,0 +1,25 @@
+package com.capgemini.cab.management.application.service;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+
+import com.capgemini.cab.management.application.domain.Cab;
+
+public interface CabService {
+
+	Cab saveCab(Cab cab);
+	
+	List<Cab> getAllCabs();
+	
+	Cab getCabById(long id);
+	
+	Cab getCabByType(String cabType);
+	
+	Cab updateCab(Cab cab, long id);
+	
+	ResponseEntity<Integer> countCabsOfType(String cabType);
+	
+	void deleteCab(long id);
+	
+}

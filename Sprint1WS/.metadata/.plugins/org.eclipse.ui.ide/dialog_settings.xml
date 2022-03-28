@@ -92,6 +92,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="F:\ProjectWS"/>
+			<item value="C:\Users\Lenovo\OneDrive\Desktop\CMA\Cab-Booking-Application"/>
 			<item value="F:\student-management-system-springboot-main"/>
 			<item value="F:\spring-basic-security-master"/>
 			<item value="F:\loginapi1"/>

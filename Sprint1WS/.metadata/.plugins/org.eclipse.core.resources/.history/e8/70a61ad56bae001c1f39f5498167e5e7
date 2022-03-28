@@ -1,0 +1,49 @@
+package com.capgemini.cab.management.application.serviceImpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.capgemini.cab.management.application.domain.Cab;
+import com.capgemini.cab.management.application.exception.CabNotFoundException;
+import com.capgemini.cab.management.application.repository.CabRepository;
+import com.capgemini.cab.management.application.service.CabService;
+
+@Service
+public class CabServiceImpl implements CabService {
+
+
+	private CabRepository cabRepository;
+
+	public CabServiceImpl(CabRepository cabRepository) {
+		super();
+		this.cabRepository = cabRepository;
+	}
+
+	@Override
+	public Cab saveCab(Cab cab) {
+		
+		return cabRepository.save(cab);
+	}
+
+	@Override
+	public List<Cab> getAllCabs() {
+		
+		return cabRepository.findAll();
+	}
+
+	@Override
+	public Cab getCabById(long id) {
+		Optional<Cab> cab = cabRepository.findById(id);
+		
+		if (cab.isPresent()) {
+			return cab.get();
+		} else {
+			throw new CabNotFoundException("Cab", id);
+		}
+		
+//		return cabRepository.fin
+	}
+
+}

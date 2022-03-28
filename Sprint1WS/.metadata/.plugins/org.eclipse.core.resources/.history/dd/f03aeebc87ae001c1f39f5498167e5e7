@@ -1,0 +1,5 @@
+package com.capgemini.cab.management.application.serviceImpl;
+
+public class MapValidationErrorService {
+
+}

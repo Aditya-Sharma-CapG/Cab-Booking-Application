@@ -39,10 +39,9 @@ public class LoginController {
      System.out.print(oauthUser);
      if(Objects.nonNull(oauthUser))
      {
-     return "redirect:/cabs";
+     return "redirect:/";
 
      } else {
-    	 System.out.println("wrong details, enter again");
      return "redirect:/login";
      
      }

@@ -1,12 +1,11 @@
-package com.capgemini.cab.management.application.serviceimpl;
+package com.capgemini.cab.management.application.serviceImpl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import com.capgemini.cab.management.application.domain.Customer;
-import com.capgemini.cab.management.application.exeption.CustomerResourceNotFoundExeption;
+import com.capgemini.cab.management.application.exception.CustomerResourceNotFoundExeption;
 import com.capgemini.cab.management.application.repository.CustomerRepository;
 import com.capgemini.cab.management.application.service.CustomerService;
 @Service

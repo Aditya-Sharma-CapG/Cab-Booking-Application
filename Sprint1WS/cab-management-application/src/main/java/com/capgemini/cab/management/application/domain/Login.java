@@ -33,17 +33,21 @@ public class Login {
 	 */
 	private String password;
 	
+	
+	private String role;
+	
 	// default constructor
 	public Login() {
 		
 	}
 	
 	// parameterized constructor
-	public Login(Long id, String username, String password) {
+	public Login(Long id, String username, String password, String role) {
 		
 		this.id = id;
 		this.username = username;
 		this.password = password;
+		this.role=role;
 	}
 	
 	// Getters and Setters
@@ -66,4 +70,13 @@ public class Login {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 }
