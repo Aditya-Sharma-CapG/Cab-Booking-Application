@@ -7,5 +7,13 @@ import com.capgemini.cab.management.application.domain.Customer;
 
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
-//added crud operations 
+	/**
+	 * added crud operations
+	 * insertCustomer
+	 * updateCustomer
+	 * deleteCustomer
+	 * viewCustomer
+	 * viewCustomerById
+	 * 
+	 */
 }

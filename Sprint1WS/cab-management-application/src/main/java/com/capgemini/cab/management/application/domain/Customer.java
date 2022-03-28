@@ -1,19 +1,28 @@
 package com.capgemini.cab.management.application.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	@Column(name="username",nullable=false)
 	private String username;
+	
+	@Column(name="password",nullable=false)
 	private String password;
+	
+	@Column(name="address",nullable=false)
 	private String address;
-	private String mobileNumber;
+	
+	@Column(name="mobilenumber",nullable=false)
+	private String mobilenumber;
 	
 	public Customer() {
 		super();
@@ -44,11 +53,11 @@ public class Customer {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getMobileNumber() {
-		return mobileNumber;
+	public String getMobilenumber() {
+		return mobilenumber;
 	}
-	public void setMobileNumber(String mobileNumber) {
-		this.mobileNumber = mobileNumber;
+	public void setMobileNumber(String mobilenumber) {
+		this.mobilenumber = mobilenumber;
 	}
 	public String getEmail() {
 		return email;
