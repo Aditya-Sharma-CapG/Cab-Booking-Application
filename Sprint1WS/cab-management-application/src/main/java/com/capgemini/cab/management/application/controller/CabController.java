@@ -34,7 +34,7 @@ public class CabController {
 		return new ResponseEntity<Cab>(cabService.saveCab(cab), HttpStatus.CREATED);
 	}
 	
-	// get all cabs API
+	// get all cab details API
 	@GetMapping
 	public List<Cab> getAllCabs() {
 		return cabService.getAllCabs();
@@ -46,7 +46,7 @@ public class CabController {
 //		return new ResponseEntity<Cab>(cabService.getCabById(cabId), HttpStatus.OK);
 //	}
 	
-	// get cab by type
+	// get cab by car type
 	@GetMapping("{carType}")
 	public ResponseEntity<Cab> getCabByType(@PathVariable("carType") String cabType) {
 		return new ResponseEntity<Cab>(cabService.getCabByType(cabType), HttpStatus.OK);

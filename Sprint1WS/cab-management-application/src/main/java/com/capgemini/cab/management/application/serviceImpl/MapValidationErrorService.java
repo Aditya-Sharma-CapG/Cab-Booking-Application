@@ -1,6 +1,4 @@
-package com.capgemini.cab.management.application.serviceimpl;
-
-
+package com.capgemini.cab.management.application.serviceImpl;
 
 import java.util.HashMap;
 import java.util.Map;

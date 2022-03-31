@@ -1,13 +1,15 @@
 package com.capgemini.cab.management.application.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 /*
- * The login class is kept as Entity to display in db
+ * The login class is kept as Entity to display in database
  * table name is login
  */
 @Entity
@@ -24,17 +26,22 @@ public class Login {
 	private Long id;
 	
 	/*
-	 * username will be asked on login page to authenticate
+	 * user name will be asked on login page to authenticate
+	 * unique and not null
 	 */
+	@NotBlank(message = "username is required")
+	@Column(updatable = true, unique = false)
 	private String username;
 	
 	/*
 	 * password will be asked on login page to authenticate
 	 */
+	@NotBlank(message = "password is required")
 	private String password;
 	
-	
-	private String role;
+	@NotBlank(message = "email is required")
+	@Column(updatable = true, unique = true)
+	private String email;
 	
 	// default constructor
 	public Login() {
@@ -42,12 +49,12 @@ public class Login {
 	}
 	
 	// parameterized constructor
-	public Login(Long id, String username, String password, String role) {
+	public Login(Long id, String username, String password, String email) {
 		
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.role=role;
+		this.email=email;
 	}
 	
 	// Getters and Setters
@@ -71,12 +78,12 @@ public class Login {
 		this.password = password;
 	}
 
-	public String getRole() {
-		return role;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 }

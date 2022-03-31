@@ -1,0 +1,29 @@
+package com.capgemini.cab.management.application.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.capgemini.cab.management.application.domain.Login;
+
+@Service
+public interface LoginService {
+	
+	/*
+	 * This login method asks for user name and password to check the login details in repository, 
+	 * if not valid, then page remains unlogged
+	 * @param (username, password)
+	 * 
+	 */
+//	  public Login login(String user name, String password);
+	  
+	  ///////////////////////////////////////////////////////////
+	  
+	  Login saveLogin(Login login);
+	  
+	  List<Login> getAllLoginDetails();
+	  
+	  Login updateUserLoginDetails(Login login, String username);
+	  
+	  void deleteUserLoginDetails(long id);
+}

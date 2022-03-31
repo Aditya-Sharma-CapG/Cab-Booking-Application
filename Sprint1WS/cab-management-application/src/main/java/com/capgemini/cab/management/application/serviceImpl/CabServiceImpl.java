@@ -1,4 +1,5 @@
-package com.capgemini.cab.management.application.serviceimpl;
+package com.capgemini.cab.management.application.serviceImpl;
+
 import java.util.List;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ public class CabServiceImpl implements CabService {
 
 	private CabRepository cabRepository;
 	
+	@SuppressWarnings("unused")
 	private Cab cab;
 
 	public CabServiceImpl(CabRepository cabRepository) {
