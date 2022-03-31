@@ -1,5 +1,4 @@
-package com.capgemini.cab.management.application.serviceImpl;
-
+package com.capgemini.cab.management.application.serviceimpl;
 import java.util.List;
 import org.springframework.stereotype.Service;
 

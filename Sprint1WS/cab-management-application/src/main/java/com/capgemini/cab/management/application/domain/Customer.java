@@ -6,15 +6,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	@NotBlank(message="UserName is Required") 
 	@Column(name="username",nullable=false)
 	private String username;
-	
+	@NotBlank(message="Password is Required") 
 	@Column(name="password",nullable=false)
 	private String password;
 	

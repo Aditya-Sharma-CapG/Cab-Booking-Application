@@ -2,8 +2,12 @@ package com.capgemini.cab.management.application.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,11 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.capgemini.cab.management.application.domain.Customer;
 import com.capgemini.cab.management.application.service.CustomerService;
-
 @RestController
 @RequestMapping("/api/customers")
 public class CustomerController {
 	private CustomerService customerService;
+
 
 	public CustomerController(CustomerService customerService) {
 		super();
@@ -27,7 +31,7 @@ public class CustomerController {
 	}
 	// build create/insert customer Rest API
 	@PostMapping()
-	public ResponseEntity<Customer> saveCustomer(@RequestBody Customer customer){
+	public ResponseEntity<Customer> saveCustomer(@Valid @RequestBody Customer customer,BindingResult result){	
 	return new ResponseEntity<Customer>(customerService.saveCustomer(customer),HttpStatus.CREATED);
 	}
 	// build view all customers REST API
