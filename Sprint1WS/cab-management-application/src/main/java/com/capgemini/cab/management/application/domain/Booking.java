@@ -1,25 +1,63 @@
 package com.capgemini.cab.management.application.domain;
 
-import java.sql.Date;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+//import javax.persistence.PreUpdate;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="booking")
 public class Booking {
+	/*
+	 * Id is unique for each TripBooking and non-null.
+	 */
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int tripBookingId ;
+	/*
+	 * It specifies the customer id.
+	 */
 	private int customerId;
+	
+	/*
+	 * It specifies the starting location.
+	 */
+	@Column(name="FROM_LOCATION",nullable=false)
 	private String fromLocation;
+	
+	/*
+	 * It specifies the end location.
+	 */
+
+	@Column(name="TO_LOCATION",nullable=false)
 	private String toLocation;
+	/*
+	 * It specifies the starting date for the trip.
+	 */
 	private Date fromDateTime;
-	private Date toDateTime;
+	/*
+	 * It specifies the end date for the trip.
+	 */
+	private String toDateTime;
+	/*
+	 * It specifies availability..
+	 */
     private Boolean status;
+    /*
+	 * It specifies total distance covered in the trip.
+	 */
 	private float distanceInKm ;
+	/*
+	 * It specifies the bill of the trip done.
+	 */
 	private float bill;
 	
 	public Booking() {
@@ -55,10 +93,10 @@ public class Booking {
 	public void setFromDateTime(Date fromDateTime) {
 		this.fromDateTime = fromDateTime;
 	}
-	public Date getToDateTime() {
+	public String getToDateTime() {
 		return toDateTime;
 	}
-	public void setToDateTime(Date toDateTime) {
+	public void setToDateTime(String toDateTime) {
 		this.toDateTime = toDateTime;
 	}
 	public Boolean getStatus() {
@@ -79,8 +117,16 @@ public class Booking {
 	public void setBill(float bill) {
 		this.bill = bill;
 	}
-
-	
-	
+//	@PrePersist
+//	public void onCreate()
+//	{
+//		this.fromDateTime= new Date();
+//	}
+//	
+//	@PreUpdate
+//	public void onUpdate()
+//	{
+//		this.toDateTime = new Date();
+//	}
 
 }
